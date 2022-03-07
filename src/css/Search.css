@@ -1,0 +1,22 @@
+.Search {
+    width: 100%;
+}
+
+.Search > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 2rem 5rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .Search > form {
+        flex-direction: row;
+    }
+}
+
+.search-col > input, .search-col > select {
+    padding: 1rem 3rem;
+    border-radius: 5px;
+}

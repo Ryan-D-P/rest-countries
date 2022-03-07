@@ -1,0 +1,21 @@
+.Countries {
+    display: flex;
+    gap: 107px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0rem 5rem;
+}
+
+.country-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 370px;
+    min-height: 370px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px hsl(0, 0%, 0%);
+}
+
+.country-stats {
+    padding: 2rem;
+}

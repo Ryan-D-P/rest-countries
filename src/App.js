@@ -1,7 +1,14 @@
+import Navbar from "./Navbar";
+import Search from "./Search";
+import Countries from "./Countries";
+import Detail from "./Detail";
+
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <Navbar />
+      <Search />
+      <Countries />
     </div>
   );
 }
