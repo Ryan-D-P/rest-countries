@@ -17,5 +17,12 @@
 }
 
 .country-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     padding: 2rem;
+}
+
+.country-stats > ul > li + li {
+    margin-top: 1rem;
 }
