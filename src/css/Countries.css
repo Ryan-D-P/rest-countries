@@ -1,17 +1,22 @@
 .Countries {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    gap: 70px;
-    padding: 0rem 5rem;
+    gap: 90px;
+    padding: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .Countries {
+        padding: 0rem 5rem;
+    }
 }
 
 .country-container {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: 370px;
+    width: 380px;
     min-height: 370px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px hsl(0, 0%, 0%);

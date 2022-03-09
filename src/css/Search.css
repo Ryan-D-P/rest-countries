@@ -1,22 +1,45 @@
 .Search {
     width: 100%;
-}
-
-.Search > form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
-    padding: 2rem 5rem;
+    padding: 1rem;
 }
 
 @media screen and (min-width: 1000px) {
-    .Search > form {
+    .Search {
         flex-direction: row;
+        padding: 2rem 5rem;
     }
 }
 
+.search-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.text-col {
+    flex-grow: 1;
+}
+
+.search-col > img {
+    position: absolute;
+    width: 15px;
+    left: 20px;
+}
+
+.search-col > input {
+    width: min(500px,  100%);
+    padding: 0rem 4.5rem;
+}
+
+.search-col > select {
+    width: min(130px, 100%);
+}
+
 .search-col > input, .search-col > select {
-    padding: 1rem 3rem;
+    min-height: 50px;
     border-radius: 5px;
 }
