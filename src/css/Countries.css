@@ -1,8 +1,9 @@
 .Countries {
     display: flex;
-    gap: 107px;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
+    gap: 70px;
     padding: 0rem 5rem;
 }
 
@@ -12,8 +13,16 @@
     gap: 25px;
     width: 370px;
     min-height: 370px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0px 0px 10px 0px hsl(0, 0%, 0%);
+}
+
+.country-flag {
+    flex-grow: 1;
+}
+
+.country-flag > img {
+    border-radius: 5px 5px 0px 0px;
 }
 
 .country-stats {
@@ -21,6 +30,10 @@
     flex-direction: column;
     gap: 25px;
     padding: 2rem;
+}
+
+.country-stats > ul > li > span {
+    font-weight: 700;
 }
 
 .country-stats > ul > li + li {
