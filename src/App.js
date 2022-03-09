@@ -5,6 +5,9 @@ import Detail from "./Detail";
 import { useEffect, useState } from "react";
 
 function App() {
+  // State of the full data of countries
+  const [countryData, setCountryData] = useState([]);
+  // State of the currently displayed countries
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -13,6 +16,7 @@ function App() {
       const response = await fetch(`https://restcountries.com/v2/all`);
       const data = await response.json();
       setCountries(data);
+      setCountryData(data);
     };
 
     getCountries();
@@ -21,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Search />
+      <Search countryData={ countryData } setCountries={ setCountries } />
       <Countries countries={ countries } />
     </div>
   );

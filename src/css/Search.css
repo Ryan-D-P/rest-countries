@@ -16,7 +16,20 @@
     }
 }
 
+.search-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-col > img {
+    position: absolute;
+    width: 15px;
+    left: 20px;
+}
+
 .search-col > input, .search-col > select {
-    padding: 1rem 3rem;
+    min-height: 50px;
+    padding: 0rem 5rem;
     border-radius: 5px;
 }
