@@ -3,7 +3,13 @@
     flex-wrap: wrap;
     width: 100%;
     gap: 90px;
-    padding: 0rem 5rem;
+    padding: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .Countries {
+        padding: 0rem 5rem;
+    }
 }
 
 .country-container {
