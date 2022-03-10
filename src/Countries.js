@@ -9,7 +9,7 @@ const Countries = ({ countries }) => {
         <div className="Countries">
             {
                 countries.map((country) => (
-                    <Link to={ `/alpha/${country.alpha2Code}` } key={ country.alpha2Code } className="country-container">
+                    <Link to={ `/alpha/${country.alpha2Code}/` } key={ country.alpha2Code } className="country-container">
                         <div className="country-flag">
                             <img src={ country.flag } alt="country-flag" />
                         </div>

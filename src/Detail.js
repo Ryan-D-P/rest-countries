@@ -28,7 +28,7 @@ const Detail = () => {
         };
 
         getCountry();
-    }, []);
+    }, [code]);
 
     if (error) return <h2 style={ {marginLeft: `5rem`} } >404 - No country with this code exists.</h2>;
     else if (loading) return <h2 style={ {marginLeft: `5rem`} }>Loading...</h2>;
@@ -36,11 +36,9 @@ const Detail = () => {
     return (
         <div className="Detail">
             <div className="back-wrapper">
-                <Link to="/">
-                    <div className="back">
-                        <img src={ backIcon } alt="back-icon" />
-                        <p>Back</p>
-                    </div>
+                <Link to="/" className="back">
+                    <img src={ backIcon } alt="back-icon" />
+                    <p>Back</p>
                 </Link>
             </div>
             <div className="country-detail">
@@ -69,7 +67,7 @@ const Detail = () => {
                             {
                                 country.borders ?
                                     country.borders.map(country => (
-                                        <Link to={ `/alpha/${country}` } key={ country }>
+                                        <Link to={ `/alpha/${country}/` } key={ country }>
                                             <li className="border-country">{ country }</li>
                                         </Link>
                                     ))
