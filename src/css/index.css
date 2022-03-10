@@ -42,6 +42,10 @@ p, a, li {
   font-size: 1.6rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 li {
   list-style-type: none;
 }

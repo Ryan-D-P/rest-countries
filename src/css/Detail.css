@@ -12,6 +12,10 @@
     }
 }
 
+.Detail a {
+    color: black;
+}
+
 .back {
     display: flex;
     justify-content: center;
@@ -74,6 +78,10 @@
         flex-direction: row;
         gap: 100px;
     }
+}
+
+.detail-stats > ul > li > span {
+    font-weight: 700;
 }
 
 .detail-stats > ul > li + li {
