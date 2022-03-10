@@ -25,11 +25,14 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Home
-        countryData={ countryData }
-        countries={ countries }
-        setCountries={ setCountries }
-      />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={ <Home countryData={ countryData } countries={ countries } setCountries={ setCountries } /> } />
+          <Route path="alpha">
+            <Route path=":code" element={ <Detail countries={ countries } /> } />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

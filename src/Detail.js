@@ -1,17 +1,26 @@
+import { useParams } from "react-router-dom";
 import "./css/Detail.css";
+import backIcon from "./images/back-icon.svg";
 
-const Detail = () => {
+const Detail = ({ countries }) => {
+    const { code } = useParams();
+
+    const country = countries.find(country => country.alpha2Code === code.toUpperCase());
+
+    // No country with the route code exists
+    if (!country) return <h2 style={ {marginLeft: `5rem`} } >404 - No country with this code exists.</h2>;
+
     return (
         <div className="Detail">
             <div className="back-wrapper">
                 <div className="back">
-                    <p>back-icon.svg</p>
+                    <img src={ backIcon } alt="back-icon" />
                     <p>Back</p>
                 </div>
             </div>
             <div className="country-detail">
                 <div className="detail-flag-wrapper">
-                    <p>FLAG.png</p>
+                    <img src={ country.flag } alt="country-flag" />
                 </div>
                 <div className="detail-stats-wrapper">
                     <h2>Belgium</h2>

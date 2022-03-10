@@ -2,7 +2,7 @@ import "./css/Countries.css";
 
 const Countries = ({ countries }) => {
     // If still loading countries data from API fetch
-    if (countries.length === 0) return <h2 style={ {marginLeft: `5rem`} }>Loading...</h2>
+    if (countries.length === 0) return <h2 style={ {marginLeft: `5rem`} }>Loading...</h2>;
 
     return (
         <div className="Countries">
