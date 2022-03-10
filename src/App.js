@@ -28,7 +28,7 @@ function App() {
       <BrowserRouter basename={ `/rest-countries` }>
         <Routes>
           <Route exact path="/" element={ <Home countryData={ countryData } countries={ countries } setCountries={ setCountries } /> } />
-          <Route exact path="alpha">
+          <Route exact path="/alpha">
             <Route exact path=":code" element={ <Detail /> } />
           </Route>
         </Routes>
