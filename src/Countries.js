@@ -1,15 +1,15 @@
+import { Link } from "react-router-dom";
 import "./css/Countries.css";
 
 const Countries = ({ countries }) => {
     // If still loading countries data from API fetch
-    if (countries.length === 0) return <h2 style={ {marginLeft: `5rem`} }>Loading...</h2>
+    if (countries.length === 0) return <h2 style={ {marginLeft: `5rem`} }>Loading...</h2>;
 
     return (
         <div className="Countries">
-
             {
                 countries.map((country) => (
-                    <div className="country-container" key={ country.numericCode }>
+                    <Link to={ `/alpha/${country.alpha2Code}/` } key={ country.alpha2Code } className="country-container">
                         <div className="country-flag">
                             <img src={ country.flag } alt="country-flag" />
                         </div>
@@ -21,10 +21,9 @@ const Countries = ({ countries }) => {
                                 <li><span>Capital:</span> { country.capital }</li>
                             </ul>
                         </div>
-                    </div>
+                    </Link>
                 ))
             }
-            
         </div>
     );
 }

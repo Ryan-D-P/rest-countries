@@ -1,8 +1,8 @@
 import Navbar from "./Navbar";
-import Search from "./Search";
-import Countries from "./Countries";
+import Home from "./Home";
 import Detail from "./Detail";
 import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   // State of the full data of countries
@@ -25,8 +25,14 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Search countryData={ countryData } setCountries={ setCountries } />
-      <Countries countries={ countries } />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={ <Home countryData={ countryData } countries={ countries } setCountries={ setCountries } /> } />
+          <Route path="alpha">
+            <Route path=":code" element={ <Detail /> } />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

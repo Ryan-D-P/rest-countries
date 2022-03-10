@@ -1,40 +1,78 @@
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./css/Detail.css";
+import backIcon from "./images/back-icon.svg";
 
 const Detail = () => {
+    const { code } = useParams();
+    const [country, setCountry] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+
+    useEffect(() => {
+        const getCountry = async () => {
+            try {
+                const response = await fetch(`https://restcountries.com/v2/alpha/${code}`);
+
+                if (!response.ok) throw new Error(`404 - No country with this code exists.`);
+
+                const data = await response.json();
+                setCountry(data);
+                setError(false);
+                setLoading(false);
+            }
+            catch (err) {
+                setError(true);
+                setLoading(false);
+            }
+        };
+
+        getCountry();
+    }, [code]);
+
+    if (error) return <h2 style={ {marginLeft: `5rem`} } >404 - No country with this code exists.</h2>;
+    else if (loading) return <h2 style={ {marginLeft: `5rem`} }>Loading...</h2>;
+
     return (
         <div className="Detail">
             <div className="back-wrapper">
-                <div className="back">
-                    <p>back-icon.svg</p>
+                <Link to="/" className="back">
+                    <img src={ backIcon } alt="back-icon" />
                     <p>Back</p>
-                </div>
+                </Link>
             </div>
             <div className="country-detail">
                 <div className="detail-flag-wrapper">
-                    <p>FLAG.png</p>
+                    <img src={ country.flag } alt="country-flag" />
                 </div>
                 <div className="detail-stats-wrapper">
-                    <h2>Belgium</h2>
+                    <h2>{ country.name }</h2>
                     <div className="detail-stats">
                         <ul>
-                            <li>Native name: Belgie</li>
-                            <li>Population: 11,319,511</li>
-                            <li>Region: Europe</li>
-                            <li>Sub Region: Western Europe</li>
-                            <li>Capital: Brussels</li>
+                            <li><span>Native name:</span> { country.nativeName }</li>
+                            <li><span>Population:</span> { country.population.toLocaleString() }</li>
+                            <li><span>Region:</span> { country.region }</li>
+                            <li><span>Sub Region:</span> { country.subregion }</li>
+                            <li><span>Capital:</span> { country.capital }</li>
                         </ul>
                         <ul>
-                            <li>Top Level Domain: .be</li>
-                            <li>Currencies: Euro</li>
-                            <li>Languages: Dutch, French, German</li>
+                            <li><span>Top Level Domain:</span> { country.topLevelDomain[0] }</li>
+                            <li><span>Currencies:</span> { country.currencies.map(curr => curr.name).join(`,`) }</li>
+                            <li><span>Languages:</span> { country.languages.map(lang => lang.name).join(`,`) }</li>
                         </ul>
                     </div>
                     <div className="border-countries">
                         <p>Border Countries:</p>
                         <ul>
-                            <li className="border-country">France</li>
-                            <li className="border-country">Germany</li>
-                            <li className="border-country">Netherlands</li>
+                            {
+                                country.borders ?
+                                    country.borders.map(country => (
+                                        <Link to={ `/alpha/${country}/` } key={ country }>
+                                            <li className="border-country">{ country }</li>
+                                        </Link>
+                                    ))
+                                    : <p>None.</p>
+                            }
                         </ul>
                     </div>
                 </div>
