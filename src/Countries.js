@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./css/Countries.css";
 
 const Countries = ({ countries }) => {
@@ -6,10 +7,9 @@ const Countries = ({ countries }) => {
 
     return (
         <div className="Countries">
-
             {
                 countries.map((country) => (
-                    <div className="country-container" key={ country.numericCode }>
+                    <Link to={ `/alpha/${country.alpha2Code}` } key={ country.alpha2Code } className="country-container">
                         <div className="country-flag">
                             <img src={ country.flag } alt="country-flag" />
                         </div>
@@ -21,10 +21,9 @@ const Countries = ({ countries }) => {
                                 <li><span>Capital:</span> { country.capital }</li>
                             </ul>
                         </div>
-                    </div>
+                    </Link>
                 ))
             }
-            
         </div>
     );
 }

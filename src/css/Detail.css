@@ -12,10 +12,6 @@
     }
 }
 
-.Detail a {
-    color: black;
-}
-
 .back {
     display: flex;
     justify-content: center;

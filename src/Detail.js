@@ -67,11 +67,13 @@ const Detail = () => {
                         <p>Border Countries:</p>
                         <ul>
                             {
-                                country.borders.map(country => (
-                                    <Link to={ `/alpha/${country}` } key={ country }>
-                                        <li className="border-country">{ country }</li>
-                                    </Link>
-                                ))
+                                country.borders ?
+                                    country.borders.map(country => (
+                                        <Link to={ `/alpha/${country}` } key={ country }>
+                                            <li className="border-country">{ country }</li>
+                                        </Link>
+                                    ))
+                                    : <p>None.</p>
                             }
                         </ul>
                     </div>
