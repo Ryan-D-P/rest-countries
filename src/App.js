@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <BrowserRouter>
+      <BrowserRouter basename="/rest-countries">
         <Routes>
           <Route path="/" element={ <Home countryData={ countryData } countries={ countries } setCountries={ setCountries } /> } />
           <Route path="alpha">
