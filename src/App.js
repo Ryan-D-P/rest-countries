@@ -25,11 +25,11 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <BrowserRouter basename="/rest-countries">
+      <BrowserRouter basename={ `/rest-countries` }>
         <Routes>
-          <Route path="/" element={ <Home countryData={ countryData } countries={ countries } setCountries={ setCountries } /> } />
-          <Route path="alpha">
-            <Route path=":code" element={ <Detail /> } />
+          <Route exact path="/" element={ <Home countryData={ countryData } countries={ countries } setCountries={ setCountries } /> } />
+          <Route exact path="alpha">
+            <Route exact path=":code" element={ <Detail /> } />
           </Route>
         </Routes>
       </BrowserRouter>
