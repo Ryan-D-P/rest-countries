@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/rest-countries/static/css/main.da87935d.css",
-    "main.js": "/rest-countries/static/js/main.09dd5e3a.js",
+    "main.css": "/rest-countries/static/css/main.24254d14.css",
+    "main.js": "/rest-countries/static/js/main.1b91d41c.js",
     "index.html": "/rest-countries/index.html",
-    "static/media/search-icon.svg": "/rest-countries/static/media/search-icon.09572b69894252889783c35277563cc7.svg",
-    "static/media/moon-icon.svg": "/rest-countries/static/media/moon-icon.f4fe193b912f72b935e114b9c92a70c7.svg",
-    "static/media/back-icon.svg": "/rest-countries/static/media/back-icon.2b49a8262535edb70cfd94b018be45ee.svg",
-    "main.da87935d.css.map": "/rest-countries/static/css/main.da87935d.css.map",
-    "main.09dd5e3a.js.map": "/rest-countries/static/js/main.09dd5e3a.js.map"
+    "static/media/search-icon-dark.svg": "/rest-countries/static/media/search-icon-dark.f10ae8aaa90eeed2503373db9f6e7dbb.svg",
+    "static/media/search-icon.svg": "/rest-countries/static/media/search-icon.df5b64d760c585e68ac9e999d9c08893.svg",
+    "static/media/moon-icon-dark.svg": "/rest-countries/static/media/moon-icon-dark.10d1e7643239b13dfe9f57636b4038e8.svg",
+    "static/media/moon-icon.svg": "/rest-countries/static/media/moon-icon.692eb82e5184befb4e617ee78b20d7bf.svg",
+    "static/media/back-icon-dark.svg": "/rest-countries/static/media/back-icon-dark.cd46701e2a52161818c5faf955bef5f4.svg",
+    "static/media/back-icon.svg": "/rest-countries/static/media/back-icon.d45019c65d1ff8737ae5f8740711231c.svg",
+    "main.24254d14.css.map": "/rest-countries/static/css/main.24254d14.css.map",
+    "main.1b91d41c.js.map": "/rest-countries/static/js/main.1b91d41c.js.map"
   },
   "entrypoints": [
-    "static/css/main.da87935d.css",
-    "static/js/main.09dd5e3a.js"
+    "static/css/main.24254d14.css",
+    "static/js/main.1b91d41c.js"
   ]
 }
