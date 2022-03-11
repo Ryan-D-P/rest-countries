@@ -1,9 +1,18 @@
-import { useEffect, useState } from "react";
+import { ModeContext } from "./App";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./css/Detail.css";
 import backIcon from "./images/back-icon.svg";
+import backIconDark from "./images/back-icon-dark.svg";
 
 const Detail = () => {
+    const { isLightMode } = useContext(ModeContext);
+
+    // Styles for the brightness mode
+    const modeStyle = {
+        color: isLightMode ? "var(--veryDarkBlue)" : "var(--white)",
+    };
+
     const { code } = useParams();
     const [country, setCountry] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -37,8 +46,8 @@ const Detail = () => {
         <div className="Detail">
             <div className="back-wrapper">
                 <Link to="/" className="back">
-                    <img src={ backIcon } alt="back-icon" />
-                    <p>Back</p>
+                    <img src={ isLightMode ? backIcon : backIconDark } alt="back-icon" />
+                    <p style={ modeStyle }>Back</p>
                 </Link>
             </div>
             <div className="country-detail">
@@ -57,8 +66,8 @@ const Detail = () => {
                         </ul>
                         <ul>
                             <li><span>Top Level Domain:</span> { country.topLevelDomain[0] }</li>
-                            <li><span>Currencies:</span> { country.currencies.map(curr => curr.name).join(`,`) }</li>
-                            <li><span>Languages:</span> { country.languages.map(lang => lang.name).join(`,`) }</li>
+                            <li><span>Currencies:</span> { country.currencies.map(curr => curr.name).join(`, `) }</li>
+                            <li><span>Languages:</span> { country.languages.map(lang => lang.name).join(`, `) }</li>
                         </ul>
                     </div>
                     <div className="border-countries">
@@ -67,7 +76,7 @@ const Detail = () => {
                             {
                                 country.borders ?
                                     country.borders.map(country => (
-                                        <Link to={ `/alpha/${country}/` } key={ country }>
+                                        <Link to={ `/alpha/${country}/` } key={ country } style={ modeStyle }>
                                             <li className="border-country">{ country }</li>
                                         </Link>
                                     ))
