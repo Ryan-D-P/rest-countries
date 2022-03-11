@@ -1,7 +1,16 @@
+import { ModeContext } from "./App";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./css/Countries.css";
 
 const Countries = ({ countries }) => {
+    const { isLightMode } = useContext(ModeContext);
+
+    // Styles for the brightness mode
+    const modeStyle = {
+        color: isLightMode ? "var(--veryDarkBlue)" : "var(--white)",
+    };
+
     // If still loading countries data from API fetch
     if (countries.length === 0) return <h2 style={ {marginLeft: `5rem`} }>Loading...</h2>;
 
@@ -9,7 +18,7 @@ const Countries = ({ countries }) => {
         <div className="Countries">
             {
                 countries.map((country) => (
-                    <Link to={ `/alpha/${country.alpha2Code}/` } key={ country.alpha2Code } className="country-container">
+                    <Link to={ `/alpha/${country.alpha2Code}/` } key={ country.alpha2Code } className="country-container" style={ modeStyle }>
                         <div className="country-flag">
                             <img src={ country.flag } alt="country-flag" />
                         </div>
